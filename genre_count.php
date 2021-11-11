@@ -3,13 +3,15 @@
     require "database.php";
     //$query = R::findAll('genres');
 
-	 
-    $query = R::getAll('select genrename, count(*)
-            from books 
-            inner join genres on books.genresId = genres.id
+	// Вернёт массив данных (все записи/несколько по условию) из указанной таблицы
+    $query = R::getAll('select genrename, count(books.id)
+            from genres 
+            left join books on books.genresId = genres.id
             group by genrename'
         );
     
+    //$query = R::count( 'genrename' );
+    //echo $query;
     //print_r($query);
     R::close();
 

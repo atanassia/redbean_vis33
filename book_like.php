@@ -5,12 +5,16 @@
 
     // $query = R::find('books', 'booksname LIKE ?', ["%$search%"]);
 
+    //$fields = R::inspect('books');
+
     $search = '*';
     $query = R::getAll('select books.id, booksname, description, release_date, full_name, genrename
     from books 
     JOIN genres ON books.genresId = genres.id
     JOIN authors ON books.authorsId = authors.id
     WHERE booksname LIKE ?', ["%$search%"]);
+
+
     
     if (isset($_POST['books_value'])){
         $search = $_POST['search'];
@@ -55,12 +59,12 @@
             <table class="table mx-5">
                 <thead>
                     <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Название</th>
-                    <th scope="col">Описание</th>
-                    <th scope="col">Дата выхода</th>
-                    <th scope="col">Автор</th>
-                    <th scope="col">Жанр</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Название</th>
+                        <th scope="col">Описание</th>
+                        <th scope="col">Дата выхода</th>
+                        <th scope="col">Автор</th>
+                        <th scope="col">Жанр</th>
                     </tr>
                 </thead>
 

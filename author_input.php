@@ -4,8 +4,14 @@
 
     $data = $_POST;
 
+    // Какие поля есть в указанной таблице
+    //print_r($fields = R::inspect('authors'));
+
+    $fields = R::inspect('authors');
+
     if (isset($data['submit_author'])){
 
+        // Указываем, что будем работать с таблицей authors
         $authors_form = R::dispense('authors');
         $authors_form -> full_name = $data['full_name'];
         $authors_form -> birth_date = $data['birth_date'];
@@ -56,11 +62,13 @@
             <table class="table">
                 <thead>
                     <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">ФИО</th>
-                    <th scope="col">дата рождения</th>
-                    <th scope="col">дата смерти</th>
-                    <th scope="col"></th>
+                        <!-- <th scope="col">id</th>
+                        <th scope="col">ФИО</th>
+                        <th scope="col">дата рождения</th>
+                        <th scope="col">дата смерти</th> -->
+                        <?php foreach ($fields as $key => $val): ?>
+                            <th scope="col"><?= $key; ?></th>
+                        <?php endforeach; ?>
                     </tr>
                 </thead>
 

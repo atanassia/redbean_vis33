@@ -1,5 +1,4 @@
 <?php
-
     require "database.php";
     $genre_id = $_GET['id'];
     $genres = R::load('genres', $genre_id);

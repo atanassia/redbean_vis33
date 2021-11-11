@@ -2,11 +2,9 @@
 
     require "database.php";
     //$query = R::findAll('genres');
-
     // $query = R::find('books', 'booksname LIKE ?', ["%$search%"]);
 
-    $query = R::find('books', 'release_date >= DATE_SUB(CURRENT_DATE, INTERVAL 10 YEAR)');
-
+    $query = R::findAll('books', 'release_date >= DATE_SUB(CURRENT_DATE, INTERVAL 10 YEAR)');
 
     //print_r($query);
     R::close();

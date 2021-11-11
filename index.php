@@ -1,22 +1,20 @@
 <?php
 
-    require 'rb-mysql.php';
+    // require 'rb-mysql.php';
 
-    $dsn = 'mysql:host=localhost;dbname=el_library';
-    $username = 'root';
-    $password = '060601';
-    $options = [];
+    // $dsn = 'mysql:host=localhost;dbname=el_library';
+    // $username = 'root';
+    // $password = '060601';
+    // $options = [];
 
-    R::setup('mysql:host=localhost;dbname=el_library','root','060601');
+    // R::setup('mysql:host=localhost;dbname=el_library','root','060601');
     
-    if  (!R::testConnection() ){
-        exit ('Нет соединения с базой данных.\n');
-    }
-    else{
-        // echo "Соединение с БД установлено.\n";
-    }
-
-    
+    // if  (!R::testConnection() ){
+    //     exit ('Нет соединения с базой данных.\n');
+    // }
+    // else{
+    //     // echo "Соединение с БД установлено.\n";
+    // }
 
     // $depts = R::dispense('depts');
     // $depts -> deptsname = 'Призрак победы';
@@ -32,7 +30,7 @@
 	//print_r($query);
 
 
-    R::close();
+    //R::close();
 
 ?>
 
