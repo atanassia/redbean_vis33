@@ -38,7 +38,7 @@
                                 <td><?= $val; ?></td>  
                             <?php endforeach; ?>
                             <td>
-                                <a href="genre_delete.php>$id=<?= $item['id'] ?>" onclick = "return confirm('Вы точно хотите удалить запись?')" style = "padding:0 !important;" class="btn">
+                                <a href="genre_delete.php?id=<?= $item['id'] ?>" onclick = "return confirm('Вы точно хотите удалить запись?')" style = "padding:0 !important;" class="btn">
                                     <img alt="" class="" src="delete.svg">
                                 </a>
                             </td>

@@ -12,11 +12,11 @@
         $authors_form -> death_date = $data['death_date'];
         // Сохраняем объект
         R::store($authors_form);
-
     }
     
     $query = R::findAll('authors');
 
+    // закрытие соединения с базой данных
     R::close();
 
 ?>
